@@ -22,6 +22,9 @@ server.listen(3000, '192.168.1.36' || 'localhost', function(){
 app.get('/', (req, res)=> {
     res.send('ruta raiz del backend');
 });
+app.get('/test', (req, res)=> {
+    res.send('bienvenido a la ruta de test');
+});
 //ERROR HANDLER
 app.use((err, req, res, next) => {
     console.log(err);
