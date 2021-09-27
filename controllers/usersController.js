@@ -27,7 +27,7 @@ module.exports = {
 
             return res.status(201).json({
                 success: true,
-                message: 'el registro se realizo correctamente',
+                message: 'el registro se realizo correctamente, ahora inicia sessión',
                 data: data.id
             });
         } catch (error) {

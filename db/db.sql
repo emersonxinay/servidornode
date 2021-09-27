@@ -47,6 +47,41 @@ VALUES(
 );
 /* aqui termina el codigo para insertar los roles */
 
+
+/* Para agrupar nuestras consultas */
+S SELECT
+        U.id,
+        U.email,
+        U.name,
+        U.lastname,
+        U.image,
+        U.phone,
+        U.password,
+        U.session_token,
+        json_agg(
+            json_build_object(
+                'id', R.id,
+                'name', R.name,
+                'image', R.image,
+                'route', R.route
+            )
+        ) AS roles
+    FROM
+        users AS U
+    INNER JOIN 
+        user_has_roles AS UHR
+    ON 
+        UHR.id_user = U.id
+    INNER JOIN 
+        roles AS R
+    ON 
+        R.id = UHR.id_rol
+    WHERE
+        U.email = $1
+    GROUP BY
+        U.id
+/* Aqui temina Para agrupar nuestras consultas */
+
 DROP TABLE IF EXISTS users CASCADE; /*   srive para eliminar las lista de usuarios si en caso exista en la base de datos y evitar errores*/
 CREATE TABLE users(
 	id BIGSERIAL PRIMARY KEY,
