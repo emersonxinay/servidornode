@@ -8,6 +8,44 @@ CREATE TABLE roles(
 	update_at TIMESTAMP(0) NOT NULL
 
 );
+/* insertamos los 3 roles */
+INSERT INTO roles(
+	name,
+	route,
+	create_at,
+	update_at
+)
+VALUES(
+	'CLIENTE',
+	'client/products/list',
+	'2021-11-26',
+	'2021-11-26'
+);
+INSERT INTO roles(
+	name,
+	route,
+	create_at,
+	update_at
+)
+VALUES(
+	'RESTAURANTE',
+	'restaurant/orders/list',
+	'2021-11-26',
+	'2021-11-26'
+);
+INSERT INTO roles(
+	name,
+	route,
+	create_at,
+	update_at
+)
+VALUES(
+	'REPARTIDOR',
+	'delivery/orders/list',
+	'2021-11-26',
+	'2021-11-26'
+);
+/* aqui termina el codigo para insertar los roles */
 
 DROP TABLE IF EXISTS users CASCADE; /*   srive para eliminar las lista de usuarios si en caso exista en la base de datos y evitar errores*/
 CREATE TABLE users(
