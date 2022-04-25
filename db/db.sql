@@ -89,7 +89,7 @@ CREATE TABLE users(
 	name VARCHAR(120) NOT NULL,
 	lastname VARCHAR(120) NOT NULL,
 	phone VARCHAR(120) NOT NULL UNIQUE,
-	image VARCHAR(125) NULL,
+	image VARCHAR(500) NULL,
 	password VARCHAR(125) NOT NULL,
 	is_available BOOLEAN NULL,
 	session_token VARCHAR(255) NULL,

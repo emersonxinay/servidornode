@@ -40,7 +40,7 @@ module.exports = {
             });
         }
     },
-    async registerWhitImage(req, res, next){
+    async registerWithImage(req, res, next){
         try {
             const user = JSON.parse(req.body.user);
             console.log(`datos enviados del usuario: ${user}`);
